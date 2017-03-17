@@ -1,0 +1,235 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*border: 1px solid;*/
+}
+
+body{
+	display: flex;
+	padding-top: 16px;
+	flex-direction: column;
+	min-height: 100vh;
+	
+}
+
+nav{
+	display: flex;
+	align-items: center;
+	width: 98%;
+}
+
+p{
+	margin-top: 40px;
+	text-align: center;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+footer{
+	display: flex;
+	background-color: #ccc;
+	height: 40px;
+}
+
+.site-content{
+	flex: 1;
+}
+
+.container{
+	display: flex;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.container-fluid{
+	display: flex;
+	margin: auto;
+}
+
+.row-reverse{
+	flex-direction: row-reverse;
+}
+
+.pull-right{
+	justify-content: flex-end;
+}
+
+.pull-left{
+	justify-content: flex-start;
+}
+
+.navbar-item{
+	padding: 5px 10px;
+	font-family: Arial;
+	font-size: 13px;
+	opacity: 0.75;
+}
+
+.navbar-item a{
+	text-decoration: none;
+	color: #000;
+}
+
+.navbar-item a:hover{
+	text-decoration: underline;
+}
+
+
+
+#aplicaciones{
+	display: block;
+	cursor: pointer;
+	background-image: url("https://ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+	background-position-x: -132px;
+	background-position-y: -38px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	opacity: .55;
+}
+#aplicaciones-2{
+	padding: 3px 15px;
+}
+#aplicaciones-2 a{
+	display: block;
+	cursor: pointer;
+	background-image: url("https://ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+	background-position-x: -194px;
+	background-position-y: -21px;
+	border-radius: 100%;
+	padding: 3px 0;
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+	vertical-align: middle;
+	opacity: .55;
+}
+#aplicaciones-3{
+	padding-right: 10px;
+	padding-top: 0;
+	margin-top: 0;
+}
+#aplicaciones-3 a{
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	background-image: url("https://lh3.googleusercontent.com/-OLTtZqqztoc/AAAAAAAAAAI/AAAAAAAAAAA/AAomvV3qlthm-7KK8YDoJF53pPCKEdFr4A/s32-c-mo/photo.jpg");
+	border-radius: 100%;
+	background-position: center center;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+#aplicaciones:hover{
+	opacity: .85;
+}
+
+#aplicaciones-2 a:hover{
+	opacity: .85;
+}
+
+#logo{
+	display:block;
+	width: 272px;
+	height: 92px;
+	margin-top: 150px;
+	background-image: url("https://www.google.com.ar/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+}
+#search-box{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 44px;
+	width:528px;
+	margin: 20px auto;
+	box-shadow: 2px 2px 5px #ccc;
+	justify-content: center;
+	border: 1px solid  #eee;
+}
+
+#search{
+	display:flex;
+	outline: none;
+	width: 503px;
+	height: 34px;
+	margin: 20px 0;
+	background-color: transparent;
+	border: none;
+}
+
+#search:focus{
+	outline: none;
+}
+
+#botones{
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.boton{
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #757575;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	margin: 0 6px;
+	padding: 0 16px;
+	height: 36px;
+}
+
+.boton:hover{
+	color: #000;
+	border: 1px solid #c6c6c6;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+footer{
+	display:flex;
+	justify-content: space-between;
+	background-color: #f2f2f2;
+	border-top: 1px solid #e4e4e4;
+}
+
+#fl{
+	display:flex;
+	flex-grow: 1;
+	justify-content: stretch;
+	align-items: center;
+}
+
+#fr{
+	display:flex;
+
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#fl li{
+	font-family: Arial;
+	font-size: 13px;
+	color: #666;
+	padding-left: 30px;
+	text-decoration: none;
+	list-style: none;
+	white-space: no-wrap;
+}
+
+#fr li{
+	font-family: Arial;
+	font-size: 13px;
+	color: #666;
+	padding-right: 30px;
+	text-decoration: none;
+	list-style: none;
+	white-space: no-wrap;
+}
+
+#fr li:hover, #fl li:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
