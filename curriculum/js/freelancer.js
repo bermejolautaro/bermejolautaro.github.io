@@ -51,3 +51,20 @@
   });
 
 })(jQuery); // End of use strict
+
+//Cerrar modal cuando tocas back desde el celular
+$('div.modal').on('show', function() {
+	var modal = this;
+	var hash = modal.id;
+	window.location.hash = hash;
+	window.onhashchange = function() {
+		if (!location.hash){
+			$(modal).modal('hide');
+		}
+	}
+});
+
+$('div.modal').on('hide', function() {
+	var hash = this.id;
+	history.pushState('', document.title, window.location.pathname);
+});
