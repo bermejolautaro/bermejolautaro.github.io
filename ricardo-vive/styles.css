@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+main{
+  margin: auto;
+  width: 70%;
+  height: 100%;
+  background-image: url("src/ricardo-bg.jpg");
+  background-size: 100% auto;
+  background-position: 100% 25%;
+  background-color: #64a5dd;
+  background-repeat: no-repeat;
+}
+
+.button-container{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+  padding: 2em;
+}
+
+.button{
+  width: 100px;
+  height: 95px;
+  border-radius: 100%;
+  background-image: url("https://www.myinstants.com/media/images/transparent_button_normal.png");
+  background-color: red;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.button:active{
+  background-image: url("https://www.myinstants.com/media/images/transparent_button_pressed.png");
+}
+
+.button-caption{
+  text-align: center;
+  padding: 1em 0;
+  font-family: arial, serif;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
