@@ -3,6 +3,10 @@ let sounds = document.querySelectorAll("audio");
 
 function playAudio(event){
   let audio = event.target.parentElement.getElementsByTagName("audio")[0];
+  sounds.forEach(function(sound){
+    sound.pause();
+    sound.currentTime = 0;
+  });
   audio.play();
 }
 
