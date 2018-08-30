@@ -22,14 +22,16 @@ let sounds = document.querySelectorAll("audio");
 //Defino la funcion playAudio que dice como debe ser reproducido un audio
 function playAudio(event){
   let audio = event.target.parentElement.getElementsByTagName("audio")[0];
+  let soundName = event.target.parentElement.getElementsByClassName("button-caption")[0].textContent;
+  console.log('botonesDeAudio' + ' - ' +  soundName);
   sounds.forEach(function(sound){
     sound.pause();
     sound.currentTime = 0;
   });
 
   //Envio informacion sobre el boton a Google Analytics
-  gtag('event', 'clickBoton',{
-    'event_category' : 'botonesDeAudio' + audio.src,
+  gtag('event', 'clickBoton', {
+    'event_category' : 'botonesDeAudio' + ' - ' +  soundName,
     'event_label' : 'Reproducir',
     'value' : 1
   });
