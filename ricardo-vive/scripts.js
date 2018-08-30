@@ -29,8 +29,8 @@ function playAudio(event){
 
   //Envio informacion sobre el boton a Google Analytics
   gtag('event', 'clickBoton',{
-    'event_category' : 'botonesDeAudio',
-    'event_label' : 'Reproducir' + audio.src,
+    'event_category' : 'botonesDeAudio' + audio.src,
+    'event_label' : 'Reproducir',
     'value' : 1
   });
 
