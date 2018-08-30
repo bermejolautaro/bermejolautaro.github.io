@@ -30,8 +30,8 @@ function playAudio(event){
   //Envio informacion sobre el boton a Google Analytics
   gtag('event', 'clickBoton',{
     'event_category' : 'botonesDeAudio',
-    'event_label' : 'Reproducir',
-    'value' : audio.src
+    'event_label' : 'Reproducir' + audio.src,
+    'value' : 1
   });
 
   audio.play();
