@@ -30,7 +30,8 @@ function playAudio(event){
   });
 
   //Envio informacion sobre el boton a Google Analytics
-  gtag('event', 'clickBoton', {
+  dataLayer.push({
+    'event' : 'clickBoton',
     'event_category' : 'botonesDeAudio' + ' - ' +  soundName,
     'event_label' : 'Reproducir',
     'value' : 1
