@@ -30,12 +30,12 @@ function playAudio(event){
   });
 
   //Envio informacion sobre el boton a Google Analytics
-  dataLayer.push({
-    'event' : 'clickBoton',
-    'event_category' : 'botonesDeAudio' + ' - ' +  soundName,
-    'event_label' : 'Reproducir',
-    'value' : 1
-  });
+  // dataLayer.push({
+  //   'event' : 'clickBoton',
+  //   'event_category' : 'botonesDeAudio' + ' - ' +  soundName,
+  //   'event_label' : 'Reproducir',
+  //   'value' : 1
+  // });
 
   audio.play();
 }
