@@ -76,8 +76,11 @@ class Cell{
     }
 
     reveal(){
+        console.log(revealedCells);
         this.revealed = true;
-        revealedCells--;
+        if(!this.revealed){
+            revealedCells--;
+        }
             if(!this.hasMine && this.totalNeighbours === 0){
                 this.floodFill();
             }
