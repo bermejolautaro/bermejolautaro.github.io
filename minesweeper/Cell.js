@@ -76,7 +76,6 @@ class Cell{
     }
 
     reveal(){
-        console.log(revealedCells);
         this.revealed = true;
         if(!this.revealed){
             revealedCells--;
