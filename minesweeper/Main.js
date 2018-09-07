@@ -63,7 +63,7 @@ function mousePressed(indexClick){
                     grid[i][j].flag();
                 }
 
-                window.navigator.vibrate(200);
+                window.navigator.vibrate(100);
             }
         }
         if(revealedCells === totalMines){
