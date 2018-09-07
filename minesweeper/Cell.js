@@ -1,6 +1,5 @@
 class Cell{
     constructor(i, j, w, h){
-        this.offset = 50;
         this.revealed = false;
         this.flagged = false;
         this.totalNeighbours = 0;
@@ -10,8 +9,8 @@ class Cell{
         this.h = h;
         this.i = i;
         this.j = j;
-        this.x = i * w + this.offset;
-        this.y = j * h + this.offset;
+        this.x = i * w + gridOffset;
+        this.y = j * h + gridOffset;
 
 
     }
