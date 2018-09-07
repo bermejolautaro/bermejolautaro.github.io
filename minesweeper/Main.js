@@ -73,28 +73,23 @@ function mousePressed(indexClick){
 }
 
 function gameOver(state){
-    if(state === 0){
 
-        for(let i = 0; i < grid.length; i++){
-            for(let j = 0; j < grid[0].length; j++){
-                //Inicializar cada cell
-                grid[i][j].reveal();
-            }
+    for(let i = 0; i < grid.length; i++){
+        for(let j = 0; j < grid[0].length; j++){
+            //Inicializar cada cell
+            grid[i][j].reveal();
         }
-    
+    }
+
+    if(state === 0){ 
         ctx.fillStyle = "red"
         ctx.font = "600 52px Arial";
+        ctx.textAlign = "center";
         ctx.fillText("PERDISTE PUTITA", width / 2, height / 2);
         ctx.strokeStyle = "black";
         ctx.strokeText("PERDISTE PUTITA", width / 2, height / 2);
     }
     else if(state === 1){
-        for(let i = 0; i < grid.length; i++){
-            for(let j = 0; j < grid[0].length; j++){
-                //Inicializar cada cell
-                grid[i][j].reveal();
-            }
-        }
         ctx.fillStyle = "green"
         ctx.font = "600 52px Arial";
         ctx.fillText("GANASTE BEBE", width / 2, height / 2);
@@ -125,6 +120,7 @@ function newGame(){
 
     rows = inputRows;
     cols = inputCols;
+    revealedCells = cols * rows;
     totalMines = inputMines;
     totalFlags = totalMines;
 
@@ -166,7 +162,7 @@ function newGame(){
     canvas.setAttribute("height",  height.toString());
 
     //Pintar fondo
-    ctx.fillStyle = "#fbfbfb";
+    ctx.fillStyle = "#eee";
     ctx.fillRect(0, 0, width, height);
 
     //Color de borde de celda
@@ -197,6 +193,7 @@ canvas.addEventListener("contextmenu", function(e){
     e.preventDefault();
     e.stopPropagation();
     mousePressed(2);
+    return false;
 }, false);
 
 

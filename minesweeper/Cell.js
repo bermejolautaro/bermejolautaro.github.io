@@ -27,7 +27,12 @@ class Cell{
                 ctx.fillStyle = "#000";
                 ctx.fillStyle = "#000";
                 ctx.beginPath();
-                ctx.arc(this.x + this.w / 2, this.y + this.h / 2, (this.w - 10) / 2, 0, Math.PI * 2);
+                if(this.h <= this.w){
+                    ctx.arc(this.x + this.w / 2, this.y + this.h / 2, (this.h - 10) / 2, 0, Math.PI * 2);
+                }
+                else{
+                    ctx.arc(this.x + this.w / 2, this.y + this.h / 2, (this.w - 10) / 2, 0, Math.PI * 2);
+                }
                 ctx.fill();
             }
             else{
