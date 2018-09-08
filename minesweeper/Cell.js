@@ -44,7 +44,21 @@ class Cell{
                 ctx.fillStyle = "#000";
                 ctx.textAlign = "center";
                 if(this.totalNeighbours !== 0){
+                    ctx.save();
+                    ctx.font = "900 16px Arial";
+                    switch(this.totalNeighbours){
+                        case 1: ctx.fillStyle = "blue"; break;
+                        case 2: ctx.fillStyle = "green"; break;
+                        case 3: ctx.fillStyle = "red"; break;
+                        case 4: ctx.fillStyle = "#0b0a57"; break;
+                        case 5: ctx.fillStyle = "#770e0e"; break;
+                        case 6: ctx.fillStyle = "#107584"; break;
+                        case 7: ctx.fillStyle = "black"; break;
+                        case 8: ctx.fillStyle = "black"; break;
+
+                    }
                     ctx.fillText(this.totalNeighbours, this.x + this.w / 2, this.y + this.h / 2 + 5);
+                    ctx.restore();
                 }
             }
 
@@ -80,6 +94,9 @@ class Cell{
     }
 
     reveal(){
+        if(this.hasMine && running){
+            gameOver(0);
+        }
         if(!this.revealed){
             revealedCells--;
         }

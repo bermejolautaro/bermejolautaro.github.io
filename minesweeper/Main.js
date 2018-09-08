@@ -47,9 +47,6 @@ function mousePressed(indexClick){
         if(indexClick === 0 && i > -1 && i < grid.length && j > -1 && j < grid[0].length){
             if(grid[i][j].contains(mousePos.x, mousePos.y) && !grid[i][j].flagged){
                 grid[i][j].reveal();
-                if(grid[i][j].hasMine){
-                    gameOver(0);
-                }
             }
         }
         else if(indexClick === 2 && i > -1 && i < grid.length && j > -1 && j < grid[0].length){
@@ -73,6 +70,12 @@ function mousePressed(indexClick){
 }
 
 function gameOver(state){
+    running = false;
+    let trampa = false;
+
+    if(totalMines != revealedCells){
+        trampa = true;
+    }
 
     for(let i = 0; i < grid.length; i++){
         for(let j = 0; j < grid[0].length; j++){
@@ -81,23 +84,35 @@ function gameOver(state){
         }
     }
 
-    if(state === 0){ 
+    if(trampa && state != 0){
         ctx.fillStyle = "red"
-        ctx.font = "600 52px Arial";
+        ctx.font = "600 44px Arial";
         ctx.textAlign = "center";
-        ctx.fillText("PERDISTE PUTITA", width / 2, height / 2);
+        ctx.fillText("DEJA DE HACER TRAMPA BOBO", width / 2, height / 2);
         ctx.strokeStyle = "black";
-        ctx.strokeText("PERDISTE PUTITA", width / 2, height / 2);
+        ctx.strokeText("DEJA DE HACER TRAMPA BOBO", width / 2, height / 2);
     }
-    else if(state === 1){
-        ctx.fillStyle = "green"
-        ctx.font = "600 52px Arial";
-        ctx.fillText("GANASTE BEBE", width / 2, height / 2);
-        ctx.strokeStyle = "black";
-        ctx.strokeText("GANASTE BEBE", width / 2, height / 2);
+    else{
+        if(state === 0){ 
+            ctx.fillStyle = "#FF0000"
+            ctx.font = "600 52px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("PERDISTE PUTITA", width / 2, height / 2);
+            ctx.strokeStyle = "black";
+            ctx.strokeText("PERDISTE PUTITA", width / 2, height / 2);
+        }
+        else if(state === 1){
+            ctx.fillStyle = "#00FF00"
+            ctx.font = "600 52px Arial";
+            ctx.fillText("GANASTE BEBE", width / 2, height / 2);
+            ctx.strokeStyle = "black";
+            ctx.strokeText("GANASTE BEBE", width / 2, height / 2);
+        }
     }
 
-    running = false;
+
+
+
 }
 
 function newGame(){
@@ -204,6 +219,7 @@ canvas.addEventListener("contextmenu", function(e){
 btnGenerate.addEventListener("click", function(e){
     newGame();
 }, false);
+
     
 
 
