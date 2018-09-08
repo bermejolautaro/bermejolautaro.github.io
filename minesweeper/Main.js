@@ -107,15 +107,19 @@ function newGame(){
 
     if(isNaN(inputRows) || inputRows < 1){
         inputRows = 20;
+        document.getElementById("inputRows").setAttribute("placeholder", inputRows)
     }
     if(isNaN(inputCols) || inputCols < 1){
         inputCols = 20;
+        document.getElementById("inputCols").setAttribute("placeholder", inputCols)
     }
     if(inputMines >= inputRows * inputCols){
         inputMines = inputRows * inputCols;
+        document.getElementById("inputMines").setAttribute("placeholder", inputMines)
     }
     else if(isNaN(inputMines) || inputRows < 1){
-        inputMines = inputRows * inputCols / 10;
+        inputMines = Math.floor(inputRows * inputCols / 10);
+        document.getElementById("inputMines").setAttribute("placeholder", inputMines)
     }
 
     rows = inputRows;

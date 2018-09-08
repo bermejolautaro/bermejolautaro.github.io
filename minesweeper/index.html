@@ -8,12 +8,6 @@
                 padding: 0;
                 margin: 0;
             }
-
-            #btnGenerate{
-                user-select: none;
-                -moz-user-select: none;
-                -webkit-user-select: none;
-            }
             
             .container{
                 display: flex;
@@ -44,22 +38,31 @@
 
                 margin: 25px;
             }
+
+            .unselectable{
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
         </style>
         <div class="container">
 
             <div class="control">
                 <div class="buttons"> 
-                    <span class="buttonLabel">Numero de filas: </span><input type="text" id="inputRows">
+                    <span class="buttonLabel">Numero de filas: </span><input type="text" id="inputRows" class="unselectable">
                 </div>
     
                 <div class="buttons">
-                        <span class="buttonLabel">Numero de columnas: </span><input type="text" id="inputCols">
+                        <span class="buttonLabel">Numero de columnas: </span><input type="text" id="inputCols" class="unselectable">
                 </div>
     
                 <div class="buttons">
-                        <span class="buttonLabel">Cantidad de minas: </span><input type="text" id="inputMines">
+                        <span class="buttonLabel">Cantidad de minas: </span><input type="text" id="inputMines" class="unselectable">
                 </div>
-                <button type="button" id="btnGenerate"><span>Generar</span></button>
+                <button type="button" id="btnGenerate" class="unselectable"><span>Generar</span></button>
             </div>
         </div>
         <div class="canvasContainer">
