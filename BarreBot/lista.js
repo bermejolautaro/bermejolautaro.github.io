@@ -1,61 +1,5 @@
-let tweets2 = [
-    'La gente que dice que le encanta el frío, no sale a laburar o estudiar a las 7am no??? ES UNA TORTURA.',
-    'Que bronca me da la gente que para twittear empieza a concatenar sin sentido palabras que leyó en sus apuntes de la facultad para ver si le queda algo inteligente.',
-    'La persona que maneja la calefacción en el tren es atérmica. O te cagas de calor o te morís de frío, no hay punto medio.',
-    'Chabón qué le hicieron al tren? Estoy viajando sentado',
-    'Qué ganas de preguntar cosas en clase un viernes a las 10 de la noche. Callense así termina de una vez!!',
-    'Esta es la época de "empecé el cuatrimestre diciendo que iba a estar al día y me salió como el culo" seguido de 3 días de intenso estudio.',
-    'Qué espanto la coca sin gas por favor',
-    'Por favor pongan el CBC en Chubut así no hay que viajar tan como el ojete en el transporte público cada vez que empieza.',
-    'Vinieron 50 personas al taller de OMA. 50.',
-    'Odio esa gente en la facultad que hace preguntas al profesor pero no le interesa la respuesta. Dejá de hinchar los huevos, hace 40 grados y me quiero ir!',
-    'Que lindo cuando estás en la estación cagado de calor y de repente entras al tren con aire.',
-    'Con esto del descuento de la SUBE, pequeño detalle que puede fallar: si le pedis a tu amigo la plata y sacás vos tu boleto y el suyo, ganás porque el segundo sale 50% menos. Está chequeado esto?',
-    'No le deseo a nadie el calor infernal del pabellón 1 en verano.',
-    'Qué lindo arrancar a cursar el 29 de Enero ',
-    'Qué hermoso es sacar mesa en Pueblo',
-    'Que lindas son las vacaciones espontáneas!',
-    'Chino me nombra en la entrevista de Crónica y yo estoy tipo Mike Wazowsky: "APAREZCO EN LA PORTADA!"',
-    'Esos «sale bar?» espontáneos son lo mejor del grupo.',
-    'Qué lindo es viajar con el aire del tren por favor.',
-    'El próximo capítulo de Flash sale recién el 16 de enero',
-    'Quiero terminar de rendir, por favor!',
-    '"Este finde largo me pongo a full a estudiar".',
-    'Qué bien me hizo viajar al Nacional. Lo que genera una olimpíada es increíble, te marca de por vida.',
-    'Arrancamos! #NacionalOMA2017',
-    'Por más quemado que esté, voy a subir 15 historias de instagram de la ventana del avión. Perdón si ustedes viajan todos los días yo tomo mate en La Bristol.',
-    'Pobre nivel: soy el único de los exolímpicos que nunca viajó en avión y pedí que me dejen la ventana. Se ve que les dí lástima porque me dijeron que sí.',
-    'Volver a escuchar música que habías dejado de lado varios años trae banda de recuerdos.',
-    'Me violenta que en vez de hacer encuestas pongan "RT o fav". Les dan herramientas y se niegan a usarlas, así con todo.',
-    'Que el bondi no pare y desde arriba leerle de los labios a la gente de "la concha de tu madre".',
-    'Últimamente está lleno de tweets repetidos.',
-    'Qué linda sensación de libertad la de salir de rendir un final.',
-    'Espectacular el día para venir al río a tomar mate!',
-    'Por la bronca, hoy me clavé un paquete de Don Satur en la facu (buena excusa).',
-    'Ayer por segunda vez intenté salir a correr y llovió de nuevo. Parece que para el mundo ser matemático y hacer ejercicio no se llevan bien.',
-    'Viajar sentado a la mañana hace la diferencia por el resto del día.',
-    'Qué paja tener que cursar tantas horas y que por la ventana se vea el día hermoso.',
-    'El día previo a un final es eterno y a la vez muy poco tiempo.',
-    'Estar a mil nivel: me tuve que anotar en el gym de la facu porque sino no tenía tiempo de ir.',
-    'Siempre tengo terror de romperle la maqueta a alguno de FADU en el bondi. Son enormes.',
-    'Que grande Chino, clavó 2do puesto Provincial y ahora lo invitan al entrenamiento de la Iberoamericana. Qué lindo es entrenar.',
-    'Todos saliendo y yo recién salgo de cursar',
-    'Martes y viernes de 9 a 22 en la facu estoy re limado.',
-    'Desde que vivo con mi abuela no paro de comer y guardar ropa limpia.',
-    'Qué paja cuando te sentas a estudiar y te buscas excusas para distraerte.',
-    'Nada más lindo que compartir gustos con un grupo genial de gente.',
-    'Frase que le tiraron al chico que sacó oro en el mundial de matemática: ¿De qué planeta viniste, para dejar en camino a tanto Chino?',
-    'Mañana se va a Aeroparque a recibir a la selección nacional que vuelve del mundial de matemática! Mejor participación en 15 años. Increíble.',
-    'QUE FELICIDAD LOCO.',
-    'VAMOS CARAJO 1 ORO 2 PLATAS 1 BRONCE y 2 MENCIONES EN LA IMO PARA EL EQUIPO DE ARGENTINA Y LATAM CHAMPIONS, NO DAN MAS DE CRACKS!',
-    'Gran primer día del training camp, extrañaba a los pibes y el ambiente de competencia.',
-    'Terrible serie How I met your mother, atenta contra mi buen promedio en la facultad.',
-    'Mañana el equipo argentino viaja a la International Mathematical Olympiad (el mundial) y probablemente medio país no se entere, qué triste.',
-
-
-];
-
 let tweets = [
+    'QUE FELICIDAD LOCO.',
     'La gente que dice que le encanta el frío, no sale a laburar o estudiar a las 7am no??? ES UNA TORTURA.',
     'Yo a mi hermanita de 4 años:+ Isa y qué más te gusta a parte de las papas fritas?- Más papas.ES INDUDABLE QUE ES MI HERMANA.',
     'Que bronca me da la gente que para twittear empieza a concatenar sin sentido palabras que leyó en sus apuntes de la facultad para ver si le queda algo inteligente.',
@@ -657,7 +601,7 @@ let tweets = [
     'Por lo que sé, si para la prueba de Beron estudio la noche anterior semi dormido como siempre, me va a garchar, pero paja de estudiar posta.',
     'La selfie más grande.. con los más cracks. ',
     'La maratón de BBT y el chocolate me hicieron el domingo.',
-    '&lt;3 ',
+    '<3 ',
     'El día después de Pascua es el auge de la gordura humana.',
     'Voy a morir comiendo chocolate, lo sé.',
     'Decí que en mi pieza no se escucha nada, yo creo que si tuviera que dormir con los llantos de la bebé no podría.',
@@ -1050,40 +994,116 @@ let tweets = [
     'Y ahora tambien prohibieron publicidades de ofertas de mercados tanto en diario como por tele? Paso a paso, este pais se vuelve dictadura...',
     'Estar al pedo: el deporte mas practicado del mundo.',
     'Esto de tener que ir a los cumpleaños de familia es un mierda sinceramente jajaja',
+    'Yo creo que tenés que aceptar que la sociedad te ganó moralmente',
+    'Ehhehhh tranquila, yo pagué los envases, Gian está de testigo',
+    'Cómo olvidar que mi profesor de Ambiente en la secundaria no reciclaba porque le quedaba a 15 cuadras el punto verde más cercano',
+    'Alguien más vió que hacen mamografías en la terminal de trenes de Constitución? Wtf??',
+    '2 años seguidos fui y recién ahora me entero lpm',
+    'Las aventuras de Juampi en la ciudad',
+    'Mi hermana con 4 años me acaba de obligar a darle $100. Lo que me espera para el futuro...',
+    'Loco ahora hay que ser millonario para lavarse la cabeza. Habrá que elegir entre pelarse con máquina o pelarse por usar plusbelle',
+    'Tengo un ruido sumamente molesto en los tobillos. Fui a dos traumatólogos y básicamente me dijeron que el problema que tengo es un problema abierto (no están seguros de qué lo causa) y que conviva con eso porque es inofensivo 👍. Dejá igual ni quería estar sano.',
+    'No niego ni afirmo que vi el primer capítulo hasta el final 🙈',
+    'PORQUE HAY UNA SERIE EN NETFLIX SOBRE ORDENAR Y LE HABLAN A LA ROPA ?!?!?!?',
+    'Cómo pueden usar las converse sin medias? Recién van dos cuadras y ya me quiero cortar el pie',
+    'Soy el único que cuando baja de la cinta de correr camina peor que escabiado durante 10 segundos?',
+    'Acabo de descubrir que en la salita de mi hermanita tienen un grupo de wpp ABUELAS SALITA VERDE y arreglan para juntarse. Abuelas 2.0.',
+    'Ya no estoy seguro de nada, es peor que el paco 7 horas de parcial.',
+    'Hoy rendí un parcial durante 6 horas y 40 minutos. Qué tal su martes?',
+    'El Milka Oreo.. y puedo seguir',
+    'Jajajaja es que quieren que el "Casio" se vea más grande!',
+    'Hoy un boludo fue al gimnasio con una remera de Casio que decía 1<3 math jajajajajaja. Bueno chicos para algo la tenía que usar la remera no me juzguen.',
+    'En especial en Chubut!',
+    'Increíble como a TODOS los estudiantes de matemática nos tiembla la pierna constantemente cuando estamos concentrados.',
+    'En la facu te estamos viendo algo que se llama "triedro de Frenet-Serret" y en algún momento tiraron como que "te resuelve la vida" (para los ejercicios). Yo me quedé tipo: no habrá querido decir Fernet??',
+    'Esperemos que no dolaricen el precio de los pañuelitos porque sino la primavera va a pegar duro para los que nos da alergia.',
+    'Uno se moja más en la parada de mierda del metrobus que caminando por la calle sin techo.',
+    'Dijo el P5 del Nacional 2012',
+    'Hoy toda la gente de FADU iba con un barrilete en el tren y no se me ocurre en qué situación posible debería llevar un barrilete a la facultad. Me muero de curiosidad.',
+    'Éxitos a ese equipo!! Rompanla.',
+    'Anda en belgrano norte vovooo. De paso caminás',
+    'Que feo prepararte tanto para algo y que salga todo como el orto.',
+    '"Esta función es como una cebolla". Cuándo ya no sabemos cómo imaginarnos las cosas en topología pasan estas cosas.',
+    'Qué hacemos con esa gente que está súper pendiente de Tinelli pero no se tomó 10 minutos para informarse sobre qué está pasando con la ciencia y la educación del país?',
+    'Veo en el bondi que no soy el único boludo que salió con campera hoy.',
+    'Sos nivel 1 Martina. Los nivel 1 no saben esas cosas.',
+    'Qué linda sensación cuando te llega un aprobado inesperado.',
+    'Como me rompe los huevos que hagan encuestas con RT y fav.',
+    'Increíble que todavía haya gente que no sabe dónde apoyar la SUBE',
+    'Te lo tomaste hace menos de 4 meses cuando viniste a entrenar a casa',
+    'Tren con demoras y cancelaciones porque se descompuso alguien. OBVIO QUE SE VA A DESCOMPONER ALGUIEN SI PONEN LA CALEFACCIÓN EN 40 GRADOS Y HAY 30 CM² DE ESPACIO POR PERSONA.',
 ];
  
-let order = 6;
+let order = 7;
 
 let ngrams = {};
 
 let beginnings = [];
 
-for(let i = 0; i < tweets.length; i++){
-    for(let j = 0; j <= tweets[i].length - order; j++){
+let sentence = "";
 
-        let text = tweets[i];
-        let gram = text.substring(j, j + order);
+let barreBotImg;
 
-        if (gram.length < order) {
-            break;
-          }
+let dataURL;
 
-        if(j == 0){
-            beginnings.push(gram);
-        }
-
-        if(!ngrams[gram]){
-            ngrams[gram] = [];
-        }
-
-        ngrams[gram].push(text.charAt(j + order));
-    }
-
+function preload(){
+    barreBotImg = loadImage("BarreBot.png");
 }
 
-markovIt();
+function setup(){
 
+    generateNGrams();
 
+    generateImage();
+}
+
+document.getElementById("generate").addEventListener("click", function(){
+    generateImage();
+});
+
+document.getElementById("submit-order").addEventListener("click", function(){
+    order = parseInt(document.getElementById("order").value);
+    generateNGrams();
+});
+
+function generateImage(){
+    createCanvas(1000, barreBotImg.height);
+    background(245);
+    fill(0, 0, 0);
+    textSize(24);
+    markovIt();
+    //console.log(sentence);
+    text(sentence, barreBotImg.width + 30, 30, width - barreBotImg.width - 30, height);
+    image(barreBotImg, 0, 0);
+
+    dataURL = document.getElementById("defaultCanvas0").toDataURL();
+    document.getElementById("canvasImg").src= dataURL;
+}
+
+function generateNGrams(){
+    for(let i = 0; i < tweets.length; i++){
+        for(let j = 0; j <= tweets[i].length - order; j++){
+    
+            let text = tweets[i];
+            let gram = text.substring(j, j + order);
+    
+            if (gram.length < order) {
+                break;
+              }
+    
+            if(j == 0){
+                beginnings.push(gram);
+            }
+    
+            if(!ngrams[gram]){
+                ngrams[gram] = [];
+            }
+    
+            ngrams[gram].push(text.charAt(j + order));
+        }
+    
+    }
+}
 
 function markovIt(){
 
@@ -1103,6 +1123,8 @@ function markovIt(){
         currentGram = result.substring(len - order, len);
     }
 
-    document.write(result);
+    sentence = result;
+
+    return result;
 
 }

@@ -2,10 +2,25 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>  
-    
+    <section>
+      <div class="container-img">
+        <img id="canvasImg">
+      </div>
+      <div class="container-button">
+        <button id="generate" type="button">Generar Tweet</button>
 
+      </div>
+      <div class="container-button">
+        <input type="text" id="order"></textfield>
+        <button id="submit-order" type="button">Enviar Orden</button>
+
+      </div>
+    </section>
     <script src="lista.js"></script>
   </body>
 </html>
