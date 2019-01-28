@@ -1040,11 +1040,13 @@ let ngrams = {};
 
 let beginnings = [];
 
-let sentence = "";
+let sentence = "default text";
 
 let barreBotImg;
 
 let dataURL;
+
+let tweetContainer = document.getElementById("container-tweets");
 
 function preload(){
     barreBotImg = loadImage("BarreBot.png");
@@ -1053,11 +1055,15 @@ function preload(){
 function setup(){
 
     generateNGrams();
+    
+    sentence = markovIt();
 
     generateImage();
 }
 
 document.getElementById("generate").addEventListener("click", function(){
+    tweetContainer.innerHTML = "";
+    sentence = markovIt();
     generateImage();
 });
 
@@ -1071,8 +1077,7 @@ function generateImage(){
     background(245);
     fill(0, 0, 0);
     textSize(24);
-    markovIt();
-    //console.log(sentence);
+    //beginnings = ["Hoy sal"]
     text(sentence, barreBotImg.width + 30, 30, width - barreBotImg.width - 30, height);
     image(barreBotImg, 0, 0);
 
@@ -1100,6 +1105,8 @@ function generateNGrams(){
             }
     
             ngrams[gram].push(text.charAt(j + order));
+            ngrams[gram].source = tweets[i];
+            ngrams[gram].index = j;
         }
     
     }
@@ -1109,8 +1116,22 @@ function markovIt(){
 
     let currentGram = beginnings[Math.floor(Math.random() * beginnings.length)];
     let result = currentGram;
+    let lastGram = "";
+    let currentSource = ngrams[currentGram].source;
+
+    //createP("\"" + currentGram + "\": " + currentSource.substring(0, currentSource.search(currentGram)) + "<span style=\"color:red; font-weight:bold\">" + currentGram + "</span>" + currentSource.substring(currentSource.search(currentGram) + currentGram.length));
 
     for(let i = 0; i < 1000; i++){
+
+        let p = document.createElement("DIV");
+        let s = document.createElement("SPAN");
+        let t = document.createTextNode("\"" + currentGram + "\": " + currentSource.substring(0, ngrams[currentGram].index) + currentGram + currentSource.substring(ngrams[currentGram].index + currentGram.length));
+        let t2 = document.createTextNode("")
+
+        p.innerHTML = "<span style=\"background-color:#fde; font-weight:bold\">" + currentGram + "</span>: " + currentSource.substring(0, ngrams[currentGram].index) + "<span style=\"background-color:#fde; font-weight:bold\">" + currentGram + "</span>" + currentSource.substring(ngrams[currentGram].index + currentGram.length);
+
+        tweetContainer.appendChild(p);
+
         let possibilities = ngrams[currentGram];
 
         if(!possibilities){
@@ -1121,9 +1142,17 @@ function markovIt(){
         result += next;
         let len = result.length;
         currentGram = result.substring(len - order, len);
-    }
 
-    sentence = result;
+        if(lastGram == currentGram){
+            break;
+        }
+
+        lastGram = currentGram;
+
+        if(ngrams[currentGram]){
+            currentSource = ngrams[currentGram].source;
+        }
+    }
 
     return result;
 

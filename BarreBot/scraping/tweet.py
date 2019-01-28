@@ -12,16 +12,16 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
 
-user = api.get_user("@AgusBarreto97")
+user = api.get_user("@ilecalandra")
 
 print(user.screen_name)
 print(user.followers_count)
 
-public_tweets = api.user_timeline("@AgusBarreto97", count=1340, tweet_mode="extended")
+public_tweets = api.user_timeline("@ilecalandra", count=1340, tweet_mode="extended")
 
-tweets_lista = open("tweets-lista.csv", "wb")
+tweets_lista = open("tweets-lista-ile.csv", "wb")
 
-for tweet in tweepy.Cursor(api.user_timeline, id="@AgusBarreto97", tweet_mode="extended").items():
+for tweet in tweepy.Cursor(api.user_timeline, id="@ilecalandra", tweet_mode="extended").items():
     texto = "'" + tweet.full_text +  "',"
     if texto.find("@") == -1 and texto.find("https") == -1:
         tweets_lista.write(texto.encode("utf-8"))
