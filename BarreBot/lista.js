@@ -1046,10 +1046,11 @@ let barreBotImg;
 
 let dataURL;
 
-let tweetContainer = document.getElementById("container-tweets");
+let tweetContainer = document.getElementById("container-progression");
 
 function preload(){
     barreBotImg = loadImage("BarreBot.png");
+    tweets = loadJSON("tweets-gian.json");
 }
 
 function setup(){
@@ -1059,10 +1060,13 @@ function setup(){
     sentence = markovIt();
 
     generateImage();
+    
+    console.log(tweets[0].texto + " " + tweets[0].id + " " + Object.keys(tweets).length);
 }
 
 document.getElementById("generate").addEventListener("click", function(){
     tweetContainer.innerHTML = "";
+    document.getElementById("container-tweets").innerHTML = "";
     sentence = markovIt();
     generateImage();
 });
@@ -1077,7 +1081,6 @@ function generateImage(){
     background(245);
     fill(0, 0, 0);
     textSize(24);
-    //beginnings = ["Hoy sal"]
     text(sentence, barreBotImg.width + 30, 30, width - barreBotImg.width - 30, height);
     image(barreBotImg, 0, 0);
 
@@ -1086,10 +1089,10 @@ function generateImage(){
 }
 
 function generateNGrams(){
-    for(let i = 0; i < tweets.length; i++){
-        for(let j = 0; j <= tweets[i].length - order; j++){
+    for(let i = 0; i < Object.keys(tweets).length; i++){
+        for(let j = 0; j <= tweets[i].texto.length - order; j++){
     
-            let text = tweets[i];
+            let text = tweets[i].texto;
             let gram = text.substring(j, j + order);
     
             if (gram.length < order) {
@@ -1105,7 +1108,8 @@ function generateNGrams(){
             }
     
             ngrams[gram].push(text.charAt(j + order));
-            ngrams[gram].source = tweets[i];
+            ngrams[gram].sourceText = tweets[i].texto;
+            ngrams[gram].sourceId = tweets[i].id;
             ngrams[gram].index = j;
         }
     
@@ -1117,11 +1121,27 @@ function markovIt(){
     let currentGram = beginnings[Math.floor(Math.random() * beginnings.length)];
     let result = currentGram;
     let lastGram = "";
-    let currentSource = ngrams[currentGram].source;
-
-    //createP("\"" + currentGram + "\": " + currentSource.substring(0, currentSource.search(currentGram)) + "<span style=\"color:red; font-weight:bold\">" + currentGram + "</span>" + currentSource.substring(currentSource.search(currentGram) + currentGram.length));
+    let currentSource = "";
+    let currentId = "";
+    let lastId = "";
 
     for(let i = 0; i < 1000; i++){
+
+        let possibilities = ngrams[currentGram];
+
+        if(!possibilities){
+            break;
+        }
+
+        currentSource = ngrams[currentGram].sourceText;
+        currentId = ngrams[currentGram].sourceId;
+
+        if(currentId != lastId){
+            twttr.widgets.createTweet(
+                currentId,
+                document.getElementById('container-tweets'),
+            );
+        }
 
         let p = document.createElement("DIV");
         let s = document.createElement("SPAN");
@@ -1131,12 +1151,6 @@ function markovIt(){
         p.innerHTML = "<span style=\"background-color:#fde; font-weight:bold\">" + currentGram + "</span>: " + currentSource.substring(0, ngrams[currentGram].index) + "<span style=\"background-color:#fde; font-weight:bold\">" + currentGram + "</span>" + currentSource.substring(ngrams[currentGram].index + currentGram.length);
 
         tweetContainer.appendChild(p);
-
-        let possibilities = ngrams[currentGram];
-
-        if(!possibilities){
-            break;
-        }
 
         let next = possibilities[Math.floor(Math.random() * possibilities.length)];
         result += next;
@@ -1148,6 +1162,7 @@ function markovIt(){
         }
 
         lastGram = currentGram;
+        lastId = currentId;
 
         if(ngrams[currentGram]){
             currentSource = ngrams[currentGram].source;

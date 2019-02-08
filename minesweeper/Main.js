@@ -97,16 +97,16 @@ function gameOver(state){
             ctx.fillStyle = "#FF0000"
             ctx.font = "600 52px Arial";
             ctx.textAlign = "center";
-            ctx.fillText("PERDISTE PUTITA", width / 2, height / 2);
+            ctx.fillText("PERDISTE", width / 2, height / 2);
             ctx.strokeStyle = "black";
-            ctx.strokeText("PERDISTE PUTITA", width / 2, height / 2);
+            ctx.strokeText("PERDISTE", width / 2, height / 2);
         }
         else if(state === 1){
             ctx.fillStyle = "#00FF00"
             ctx.font = "600 52px Arial";
-            ctx.fillText("GANASTE BEBE", width / 2, height / 2);
+            ctx.fillText("GANASTE", width / 2, height / 2);
             ctx.strokeStyle = "black";
-            ctx.strokeText("GANASTE BEBE", width / 2, height / 2);
+            ctx.strokeText("GANASTE", width / 2, height / 2);
         }
     }
 

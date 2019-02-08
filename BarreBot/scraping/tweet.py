@@ -1,5 +1,4 @@
 import tweepy
-import pandas as pd
 import json
 import pprint
 ####input your credentials here
@@ -12,20 +11,32 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
 
-user = api.get_user("@ilecalandra")
+user = api.get_user("@gianfrancor0ssi")
 
 print(user.screen_name)
 print(user.followers_count)
 
-public_tweets = api.user_timeline("@ilecalandra", count=1340, tweet_mode="extended")
+public_tweets = api.user_timeline("@gianfrancor0ssi", count=26500, tweet_mode="extended")
 
-tweets_lista = open("tweets-lista-ile.csv", "wb")
+# tweets_lista = open("tweets-lista-juli.csv", "wb")
 
-for tweet in tweepy.Cursor(api.user_timeline, id="@ilecalandra", tweet_mode="extended").items():
-    texto = "'" + tweet.full_text +  "',"
-    if texto.find("@") == -1 and texto.find("https") == -1:
-        tweets_lista.write(texto.encode("utf-8"))
-        tweets_lista.write("\n".encode())
+tweets = []
+
+
+for tweet in tweepy.Cursor(api.user_timeline, id="@gianfrancor0ssi", tweet_mode="extended").items():
+    texto = "'" + tweet.full_text  +  "',"
+    if texto.find("@") == -1 and texto.find("https") == -1 and texto.find("http") == -1: 
+        obj = {"texto": tweet.full_text, "id": tweet.id_str}
+        tweets.append(obj)
+        # tweets_lista.write(texto.encode("utf-8"))
+        # tweets_lista.write("\n".encode())
+
+print("Terminado.")
+
+with open('tweets-gian.json', 'w') as outfile:
+    json.dump(tweets, outfile)
+
+print("Archivo guardado.")
 
 # print("Imprimiendo 500 tweets")
 # for tweet in public_tweets:
