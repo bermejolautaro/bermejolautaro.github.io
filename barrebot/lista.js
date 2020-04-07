@@ -1050,7 +1050,7 @@ let tweetContainer = document.getElementById("container-progression");
 
 function preload(){
     barreBotImg = loadImage("BarreBot.png");
-    tweets = loadJSON("tweets-gian.json");
+    tweets = loadJSON("tweets-barreto.json");
 }
 
 function setup(){
