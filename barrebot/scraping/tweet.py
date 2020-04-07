@@ -11,19 +11,21 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
 
-user = api.get_user("@gianfrancor0ssi")
+userId = "@AgusBarreto97"
+
+user = api.get_user(userId)
 
 print(user.screen_name)
 print(user.followers_count)
 
-public_tweets = api.user_timeline("@gianfrancor0ssi", count=26500, tweet_mode="extended")
+public_tweets = api.user_timeline(userId, count=26500, tweet_mode="extended")
 
 # tweets_lista = open("tweets-lista-juli.csv", "wb")
 
 tweets = []
 
 
-for tweet in tweepy.Cursor(api.user_timeline, id="@gianfrancor0ssi", tweet_mode="extended").items():
+for tweet in tweepy.Cursor(api.user_timeline, id=userId, tweet_mode="extended").items():
     texto = "'" + tweet.full_text  +  "',"
     if texto.find("@") == -1 and texto.find("https") == -1 and texto.find("http") == -1: 
         obj = {"texto": tweet.full_text, "id": tweet.id_str}
@@ -33,7 +35,7 @@ for tweet in tweepy.Cursor(api.user_timeline, id="@gianfrancor0ssi", tweet_mode=
 
 print("Terminado.")
 
-with open('tweets-gian.json', 'w') as outfile:
+with open('tweets-barreto-2.json', 'w') as outfile:
     json.dump(tweets, outfile)
 
 print("Archivo guardado.")
